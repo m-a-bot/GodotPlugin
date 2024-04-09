@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\TM\\Documents\\dragtool\\",
+  "WorkspaceRootPath": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|c:\\users\\tm\\documents\\dragtool\\addons\\dragplugin\\dragplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|solutionrelative:addons\\dragplugin\\dragplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|c:\\users\\tm\\documents\\godotplugin\\dragtool\\addons\\dragplugin\\source\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|solutionrelative:addons\\dragplugin\\source\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|c:\\users\\tm\\documents\\dragtool\\addons\\dragplugin\\editablesprite2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|solutionrelative:addons\\dragplugin\\editablesprite2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|c:\\users\\tm\\documents\\godotplugin\\dragtool\\addons\\dragplugin\\editorinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|solutionrelative:addons\\dragplugin\\editorinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dragplugin.cs",
-              "DocumentMoniker": "C:\\Users\\TM\\Documents\\dragtool\\addons\\dragplugin\\dragplugin.cs",
-              "RelativeDocumentMoniker": "addons\\dragplugin\\dragplugin.cs",
-              "ToolTip": "C:\\Users\\TM\\Documents\\dragtool\\addons\\dragplugin\\dragplugin.cs",
-              "RelativeToolTip": "addons\\dragplugin\\dragplugin.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBIAAAAIAAAA",
+              "DocumentIndex": 1,
+              "Title": "EditorInspector.cs",
+              "DocumentMoniker": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\EditorInspector.cs",
+              "RelativeDocumentMoniker": "addons\\dragplugin\\EditorInspector.cs",
+              "ToolTip": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\EditorInspector.cs",
+              "RelativeToolTip": "addons\\dragplugin\\EditorInspector.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAIwIgAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T12:25:16.658Z",
+              "WhenOpened": "2024-04-09T19:58:28.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditableSprite2D.cs",
-              "DocumentMoniker": "C:\\Users\\TM\\Documents\\dragtool\\addons\\dragplugin\\EditableSprite2D.cs",
-              "RelativeDocumentMoniker": "addons\\dragplugin\\EditableSprite2D.cs",
-              "ToolTip": "C:\\Users\\TM\\Documents\\dragtool\\addons\\dragplugin\\EditableSprite2D.cs",
-              "RelativeToolTip": "addons\\dragplugin\\EditableSprite2D.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAwwEAAAAAFAAAA",
+              "DocumentIndex": 0,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\source\\Model.cs",
+              "RelativeDocumentMoniker": "addons\\dragplugin\\source\\Model.cs",
+              "ToolTip": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\source\\Model.cs",
+              "RelativeToolTip": "addons\\dragplugin\\source\\Model.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T22:44:21.797Z",
+              "WhenOpened": "2024-04-09T19:42:49.117Z",
               "EditorCaption": ""
             }
           ]

@@ -68,17 +68,18 @@ public partial class EditableSprite2D : Sprite2D
     {
         
         GD.Print(@event);
+        GD.Print("sprite");
 
-        if (@event is InputEventMouseButton eventMouseButton)
-            GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
-        else if (@event is InputEventMouseMotion eventMouseMotion)
-            GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
+        //if (@event is InputEventMouseButton eventMouseButton)
+        //    GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
+        //else if (@event is InputEventMouseMotion eventMouseMotion)
+        //    GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
 
-        // Print the size of the viewport.
-        GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
+        //Print the size of the viewport.
+        //GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
 
-        GD.Print(GetViewport().GetMousePosition());
-        base._Input(@event);
+        //GD.Print(GetViewport().GetMousePosition());
+        //base._Input(@event);
     }
 
     public override void _Draw()

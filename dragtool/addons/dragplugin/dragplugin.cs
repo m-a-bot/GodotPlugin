@@ -15,31 +15,30 @@ public partial class dragplugin : EditorPlugin
 		_plugin = new EditorInspector();
 		_plugin.Perfect = false;
 		AddInspectorPlugin(_plugin);
-
-        
     }
 
 	public override void _ExitTree()
 	{
 		RemoveInspectorPlugin(_plugin);
 
-        GetViewport().SetProcessInput(false);
+        //GetViewport().SetProcessInput(false);
     }
 
     public override void _Input(InputEvent @event)
     {
         base._Input(@event);
         GD.Print(@event);
+        GD.Print("plugin");
 
-        if (@event is InputEventMouseButton eventMouseButton)
-            GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
-        else if (@event is InputEventMouseMotion eventMouseMotion)
-            GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
+        //if (@event is InputEventMouseButton eventMouseButton)
+        //    GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
+        //else if (@event is InputEventMouseMotion eventMouseMotion)
+        //    GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
 
-        // Print the size of the viewport.
-        GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
+        //// Print the size of the viewport.
+        //GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
 
-        GD.Print(GetViewport().GetMousePosition());
+        //GD.Print(GetViewport().GetMousePosition());
     }
 }
 #endif

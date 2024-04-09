@@ -129,9 +129,15 @@ public partial class EditorInspector : EditorInspectorPlugin
         mainContainer.AddChild(latent_section);
         mainContainer.AddChild(boxContainer1);
 
+        Button generateButton = new Button() { Text = "Generate" };
+        generateButton.Pressed += GenerateButton_Pressed;
+
+        BoxContainer centerBoxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
+        centerBoxContainer.AddChild(generateButton);
+        mainContainer.AddChild(centerBoxContainer);
+
         if (Perfect)
         {
-            
             mainContainer.AddChild(boxContainer2);
             mainContainer.AddChild(boxContainer3);
 
@@ -152,4 +158,8 @@ public partial class EditorInspector : EditorInspectorPlugin
 
     }
 
+    private void GenerateButton_Pressed()
+    {
+        Model.ExecProcess(seed);
+    }
 }
