@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragTool", "DragTool.csproj", "{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A52B4E82-399E-4BDB-AF92-CD4F63CD9597}
+	EndGlobalSection
+EndGlobal

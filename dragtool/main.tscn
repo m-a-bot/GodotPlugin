@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://crsnfh88xfejo"]
+
+[ext_resource type="Texture2D" uid="uid://dket8jrbs70em" path="res://icon.svg" id="1_u50hx"]
+[ext_resource type="Script" path="res://addons/dragplugin/EditableSprite2D.cs" id="2_v063d"]
+
+[node name="Main" type="Node2D"]
+
+[node name="EditableSprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.5, 127.5)
+scale = Vector2(0.382813, 0.382813)
+texture = ExtResource("1_u50hx")
+script = ExtResource("2_v063d")
+Width = 49.0
+Height = 49.0
+
+[node name="EditableSprite2D2" type="Sprite2D" parent="."]
+position = Vector2(240, 84)
+texture = ExtResource("1_u50hx")
+script = ExtResource("2_v063d")
+Width = 128.0
+Height = 128.0
