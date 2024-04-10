@@ -6,23 +6,16 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="EditableSprite2D" type="Sprite2D" parent="."]
-position = Vector2(-48, 100)
-scale = Vector2(0.505342, 0.662611)
-texture = ExtResource("1_uhs07")
-script = ExtResource("2_v063d")
-Width = 118.25
-Height = 149.75
-
-[node name="EditableSprite2D2" type="Sprite2D" parent="."]
-position = Vector2(132, 129)
-scale = Vector2(0.418803, 0.672566)
-texture = ExtResource("1_uhs07")
-script = ExtResource("2_v063d")
-Width = 98.0
-Height = 152.0
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(328, 131)
 scale = Vector2(0.515625, 0.40625)
 texture = ExtResource("3_81a5u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="EditableSprite2D" type="Sprite2D" parent="."]
+position = Vector2(-40.5, -17.5)
+texture = ExtResource("1_uhs07")
+script = ExtResource("2_v063d")
+Width = 234.0
+Height = 226.0

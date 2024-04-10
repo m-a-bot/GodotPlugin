@@ -9,9 +9,13 @@ public partial class dragplugin : EditorPlugin
 	public override void _EnterTree()
 	{
 		{
-			var script = GD.Load<Script>("res://addons/dragplugin/EditableSprite2D.cs");
-			AddCustomType("EditableSprite2D", "Sprite2D", script, null);
-		}
+			var script1 = GD.Load<Script>("res://addons/dragplugin/EditableSprite2D.cs");
+            var script2 = GD.Load<Script>("res://addons/dragplugin/HandlePoint.cs");
+            var script3 = GD.Load<Script>("res://addons/dragplugin/TargetPoint.cs");
+            AddCustomType("EditableSprite2D", "Sprite2D", script1, null);
+            AddCustomType("HandlePoint", "Node2D", script2, null);
+            AddCustomType("TargetPoint", "Node2D", script3, null);
+        }
 		_plugin = new EditorInspector();
 		_plugin.Perfect = false;
 		AddInspectorPlugin(_plugin);
@@ -26,19 +30,33 @@ public partial class dragplugin : EditorPlugin
 
     public override void _Input(InputEvent @event)
     {
-        // base._Input(@event);
-        // GD.Print(@event);
-        // GD.Print("plugin");
+        if (@event is InputEventMouseButton mouseButtonEvent
+            && mouseButtonEvent.Pressed
+            && mouseButtonEvent.ButtonIndex == MouseButton.Left)
+        {
 
-        //if (@event is InputEventMouseButton eventMouseButton)
-        //    GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
-        //else if (@event is InputEventMouseMotion eventMouseMotion)
-        //    GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
+            EditableSprite2D sprite = EditableSpriteHolder.EditableObject;
 
-        //// Print the size of the viewport.
-        //GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
+            if (sprite is null)
+                return;
 
-        //GD.Print(GetViewport().GetMousePosition());
+            GD.Print(sprite);
+
+            EditableSpriteHolder.AddPoint = true;
+            sprite._Input(@event);
+
+            //Vector2 mousePos = GetViewport().GetMousePosition();
+            //Camera2D camera = GetViewport().GetCamera2D();
+            
+            //GD.Print(camera);
+
+            //Vector2 globalMousePos = camera.GetGlobalMousePosition();
+            //Vector2 localMousePos = camera.GetLocalMousePosition();
+
+            //GD.Print(sprite.GetRect().;
+            //GD.Print(globalMousePos);
+            //GD.Print(localMousePos);
+        }
     }
 }
 #endif

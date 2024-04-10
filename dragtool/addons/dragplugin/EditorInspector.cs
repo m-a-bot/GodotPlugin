@@ -1,5 +1,8 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 
 public partial class EditorInspector : EditorInspectorPlugin
 {
@@ -9,6 +12,14 @@ public partial class EditorInspector : EditorInspectorPlugin
     private int lambda = 20;
     private bool show_mask = false;
 
+    private List<string> name_networks = new()
+    {
+        "2d_game_scenes",
+        "2d_game_scenes_da",
+        "2d_game_scenes_da_generated",
+        "pretrained_imagenet_2d_game_scenes"
+    };
+
     private LineEdit seedEdit;
     private LineEdit stepSizeEdit;
     private LineEdit maskRadiusEdit;
@@ -17,16 +28,19 @@ public partial class EditorInspector : EditorInspectorPlugin
     public bool Perfect { get; set; } = true;
     public int Steps { get; set; } = 0;
 
+    public bool Add { get; set; } = false;
+    public bool Remove { get; set; } = false;
+
     public override bool _CanHandle(GodotObject @object)
     {
         return @object.GetType() == typeof(EditableSprite2D);
     }
 
-    GodotObject targetObject;
-
     public override void _ParseBegin(GodotObject @object)
     {
-        targetObject = @object;
+        EditableSpriteHolder.EditableObject = @object as EditableSprite2D;
+
+        //GD.Print(EditableObject.GetClass());
 
         seedEdit = new LineEdit() { Text = $"{seed}" };
         seedEdit.TextChanged += SeedEdit_TextChanged;
@@ -41,14 +55,12 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         Label pickle_section = new Label() { Text = "Pickle" };
         OptionButton pickle_variants = new OptionButton();
-        pickle_variants.AddItem("2d_game_scenes");
-        pickle_variants.AddItem("2d_game_scenes_da");
-        pickle_variants.AddItem("2d_game_scenes_da_generated");
-        pickle_variants.AddItem("pretrained_imagenet_2d_game_scenes");
-        pickle_variants.AddItem("abstract_scenes");
-        pickle_variants.AddItem("pretrained_wikiart_abstract_scenes");
-        pickle_variants.AddItem("Mario_da");
-        pickle_variants.AddItem("pretrained_imagenet_Mario_da");
+        foreach (string name_net in name_networks)
+        {
+            pickle_variants.AddItem(name_net);
+        }
+      
+        pickle_variants.ItemSelected += Pickle_variants_ItemSelected;
 
         BoxContainer boxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
         boxContainer.AddChild(pickle_variants);
@@ -146,7 +158,7 @@ public partial class EditorInspector : EditorInspectorPlugin
         mainContainer.AddChild(latent_section);
         mainContainer.AddChild(boxContainer1);
 
-        Button generateButton = new Button() { Text = "Generate" };
+        Button generateButton = new Button() { Text = " Generate " };
         generateButton.Pressed += GenerateButton_Pressed;
 
         BoxContainer centerBoxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
@@ -174,6 +186,12 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         AddCustomControl(mainContainer);
 
+    }
+
+    private void Pickle_variants_ItemSelected(long index)
+    {
+        GD.Print(Directory.GetCurrentDirectory());
+        GD.Print(name_networks[(int) index]);
     }
 
     private void DownSeed_Pressed()

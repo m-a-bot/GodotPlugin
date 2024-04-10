@@ -52,12 +52,39 @@ public partial class EditableSprite2D : Sprite2D
         SaveProperties();
     }
 
-    public override void _Draw()
+    //public override void _Draw()
+    //{
+    //    var center = new Vector2(0, 0);
+    //    float radius = 45;
+    //    var color = new Color(1, 0, 0);
+    //    DrawCircle(center, radius, color);
+
+        
+    //}
+
+    public override void _Input(InputEvent @event)
     {
-        var center = new Vector2(0, 0);
-        float radius = 45;
-        var color = new Color(1, 0, 0);
-        DrawCircle(center, radius, color);
+        if (Engine.IsEditorHint())
+        {
+            Vector2 localMousePos = GetLocalMousePosition();
+
+            if (!GetRect().HasPoint(localMousePos))
+            {
+                EditableSpriteHolder.EditableObject = null;
+                return;
+            }
+
+            Vector2 new_position = new Vector2(localMousePos[0] / 2, localMousePos[1] / 2);
+
+            HandlePoint point = new HandlePoint(new_position);
+
+            EditableSprite2D sprite = EditableSpriteHolder.EditableObject;
+
+            sprite.AddChild(point, false, InternalMode.Back);
+
+            //sprite.AddChild(point);
+            GD.Print(localMousePos);
+        }
     }
 
     public override void _Process(double delta)
