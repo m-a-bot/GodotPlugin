@@ -26,9 +26,9 @@ public partial class dragplugin : EditorPlugin
 
     public override void _Input(InputEvent @event)
     {
-        base._Input(@event);
-        GD.Print(@event);
-        GD.Print("plugin");
+        // base._Input(@event);
+        // GD.Print(@event);
+        // GD.Print("plugin");
 
         //if (@event is InputEventMouseButton eventMouseButton)
         //    GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);

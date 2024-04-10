@@ -22,14 +22,20 @@ public partial class EditorInspector : EditorInspectorPlugin
         return @object.GetType() == typeof(EditableSprite2D);
     }
 
+    GodotObject targetObject;
+
     public override void _ParseBegin(GodotObject @object)
     {
+        targetObject = @object;
+
         seedEdit = new LineEdit() { Text = $"{seed}" };
+        seedEdit.TextChanged += SeedEdit_TextChanged;
+
         stepSizeEdit = new LineEdit() { Text = $"{step_size}" };
         maskRadiusEdit = new LineEdit() { Text = $"{mask_radius}" };
         lambdaEdit = new LineEdit() { Text = $"{lambda}" };
 
-        Label title = new Label() { Text = "Generator" };
+        Label title = new Label() { Text = "2D scene generator" };
         BoxContainer __title = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
         __title.AddChild(title);
 
@@ -44,12 +50,19 @@ public partial class EditorInspector : EditorInspectorPlugin
         pickle_variants.AddItem("Mario_da");
         pickle_variants.AddItem("pretrained_imagenet_Mario_da");
 
-        BoxContainer boxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center};
+        BoxContainer boxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
         boxContainer.AddChild(pickle_variants);
 
         // Latent
         Label latent_section = new Label() { Text = "Latent" };
-        Label __seed = new Label() { Text = "Seed" };
+        Label __seed = new Label() { Text = " Seed " };
+
+        Button upSeed = new Button() { Text = "+" };
+        upSeed.Pressed += UpSeed_Pressed;
+
+        Button downSeed = new Button() { Text = "-" };
+        downSeed.Pressed += DownSeed_Pressed;
+
         Label __stepSize = new Label() { Text = "Step_size" };
         Button reset = new Button() { Text = "Reset" };
         OptionButton latent_variants = new OptionButton();
@@ -60,6 +73,10 @@ public partial class EditorInspector : EditorInspectorPlugin
         boxContainer1.AddChild(__seed);
         boxContainer1.AddChild(new VSeparator());
         boxContainer1.AddChild(seedEdit);
+        boxContainer1.AddChild(new VSeparator());
+        boxContainer1.AddChild(downSeed);
+        boxContainer1.AddChild(new VSeparator());
+        boxContainer1.AddChild(upSeed);
 
         BoxContainer boxContainer2 = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
         boxContainer2.AddChild(__stepSize);
@@ -134,6 +151,7 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         BoxContainer centerBoxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
         centerBoxContainer.AddChild(generateButton);
+        mainContainer.AddChild(new HSeparator());
         mainContainer.AddChild(centerBoxContainer);
 
         if (Perfect)
@@ -158,8 +176,41 @@ public partial class EditorInspector : EditorInspectorPlugin
 
     }
 
+    private void DownSeed_Pressed()
+    {
+        if (seed < 1)
+            return;
+        seed -= 1;
+        seedEdit.Text = $"{seed}";
+    }
+
+    private void UpSeed_Pressed()
+    {
+        seed += 1;
+        seedEdit.Text = $"{seed}";
+    }
+
+    private void SeedEdit_TextChanged(string newText)
+    {
+        int new_seed;
+        bool success = int.TryParse(newText, out new_seed);
+
+        if (!success || new_seed < 0)
+        {
+            seedEdit.Text = $"{seed}";
+            return;
+        }
+
+        seed = new_seed;
+    }
+
     private void GenerateButton_Pressed()
     {
+        //if (targetObject is not EditableSprite2D sprite)
+        //    return;
+
+        //sprite.Texture = GD.Load<Texture2D>("res://addons/dragplugin/resources/texture.png");
+
         Model.ExecProcess(seed);
     }
 }

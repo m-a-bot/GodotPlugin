@@ -6,6 +6,9 @@ using System.Linq;
 public partial class EditableSprite2D : Sprite2D
 {
 
+    private float width;
+    private float height;
+
     [Export]
     public float Width
     {
@@ -13,73 +16,40 @@ public partial class EditableSprite2D : Sprite2D
         {
             return Texture != null ? Texture.GetWidth() * Scale[0] : 0;
         }
-        set
-        {
-            Vector2 vector = Vector2.One;
-            if (Texture != null)
-            {
-                vector = new Vector2(value / Texture.GetWidth(), Scale[1]);
-            }
-            Scale = vector;
+        private set {
+            width = value;
         }
     }
     [Export]
     public float Height
     {
         get 
-        { 
-            return Texture != null ? Texture.GetHeight() * Scale[1] : 0; 
-        }
-        set
         {
-            Vector2 vector = Vector2.One;
-            if (Texture != null)
-            {
-                Scale = new Vector2(Scale[0], value / Texture.GetHeight());
-            }
-            Scale = vector;
+            return Texture != null ? Texture.GetHeight() * Scale[1] : 0;
+        }
+        private set {
+            height = value;
         }
     }
-
-    // TODO
-    // save changes
-    // get mouse position in inspector
-
 
     public void Resize(float newWidth, float newHeight)
     {
-        if (Texture != null)
-        {
-            Width = newWidth;
-            Height = newHeight;
-        }
+        Width = newWidth;
+        Height = newHeight;
     }
+
+    // // TODO
+    // // save changes
+    // // get mouse position in inspector
+
     public override void _EnterTree()
     {
-        base._EnterTree();
+        RestoreProperties();
     }
 
     public override void _ExitTree()
     {
-        base._ExitTree();
-    }
-
-    public override void _Input(InputEvent @event)
-    {
-        
-        GD.Print(@event);
-        GD.Print("sprite");
-
-        //if (@event is InputEventMouseButton eventMouseButton)
-        //    GD.Print("Mouse Click/Unclick at: ", eventMouseButton.Position);
-        //else if (@event is InputEventMouseMotion eventMouseMotion)
-        //    GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
-
-        //Print the size of the viewport.
-        //GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
-
-        //GD.Print(GetViewport().GetMousePosition());
-        //base._Input(@event);
+        SaveProperties();
     }
 
     public override void _Draw()
@@ -101,7 +71,16 @@ public partial class EditableSprite2D : Sprite2D
 
     public override void _Ready()
     {
-        SetProcessInput(true);
+        
+    }
+
+    public void SaveProperties()
+    {
+    }
+
+    private void RestoreProperties()
+    {
+        
     }
 
     //public override Godot.Collections.Dictionary<string, object> _Save()
