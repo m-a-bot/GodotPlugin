@@ -43,7 +43,7 @@ public partial class dragplugin : EditorPlugin
             GD.Print(sprite);
 
             EditableSpriteHolder.AddPoint = true;
-            sprite._Input(@event);
+            //sprite._Input(@event);
 
             //Vector2 mousePos = GetViewport().GetMousePosition();
             //Camera2D camera = GetViewport().GetCamera2D();

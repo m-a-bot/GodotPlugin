@@ -44,12 +44,12 @@ public partial class EditableSprite2D : Sprite2D
 
     public override void _EnterTree()
     {
-        RestoreProperties();
+
+     
     }
 
     public override void _ExitTree()
     {
-        SaveProperties();
     }
 
     //public override void _Draw()
@@ -77,10 +77,15 @@ public partial class EditableSprite2D : Sprite2D
             Vector2 new_position = new Vector2(localMousePos[0] / 2, localMousePos[1] / 2);
 
             HandlePoint point = new HandlePoint(new_position);
+            point.Visible = true;
 
             EditableSprite2D sprite = EditableSpriteHolder.EditableObject;
 
             sprite.AddChild(point, false, InternalMode.Back);
+
+//#if TOOLS
+//            VisualServer.
+//#endif
 
             //sprite.AddChild(point);
             GD.Print(localMousePos);
@@ -100,30 +105,4 @@ public partial class EditableSprite2D : Sprite2D
     {
         
     }
-
-    public void SaveProperties()
-    {
-    }
-
-    private void RestoreProperties()
-    {
-        
-    }
-
-    //public override Godot.Collections.Dictionary<string, object> _Save()
-    //{
-    //    var saveData = base._Save();
-    //    saveData["width"] = Width;
-    //    saveData["height"] = Height;
-    //    return saveData;
-    //}
-
-    //public override void _Load(Godot.Collections.Dictionary<string, object> data)
-    //{
-    //    base._Load(data);
-    //    if (data.Contains("width"))
-    //        Width = (float)data["width"];
-    //    if (data.Contains("height"))
-    //        Height = (float)data["height"];
-    //}
 }

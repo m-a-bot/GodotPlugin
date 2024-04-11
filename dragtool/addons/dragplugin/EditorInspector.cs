@@ -102,8 +102,8 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         // Drag
         Label drag_section = new Label() { Text = "Drag" };
-        Button add_point = new Button() { Text = "Add point" };
-        Button reset_point = new Button() { Text = "Reset point" };
+        Button add_point = new Button() { Text = "Add points" };
+        Button reset_point = new Button() { Text = "Reset points" };
         Button start = new Button() { Text = "Start" };
         Button stop = new Button() { Text = "Stop" };
         Label currentSteps = new Label() { Text = $"Steps: {Steps}" };
@@ -158,7 +158,7 @@ public partial class EditorInspector : EditorInspectorPlugin
         mainContainer.AddChild(latent_section);
         mainContainer.AddChild(boxContainer1);
 
-        Button generateButton = new Button() { Text = " Generate " };
+        Button generateButton = new Button() { Text = " Generate image" };
         generateButton.Pressed += GenerateButton_Pressed;
 
         BoxContainer centerBoxContainer = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
@@ -168,6 +168,7 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         if (Perfect)
         {
+            mainContainer.AddChild(new HSeparator());
             mainContainer.AddChild(boxContainer2);
             mainContainer.AddChild(boxContainer3);
 
