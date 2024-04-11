@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "D:\\GodotPlugin\\dragtool\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\dragplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:addons\\dragplugin\\dragplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,6 +26,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\handlepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:addons\\dragplugin\\handlepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|c:\\users\\tm\\documents\\godotplugin\\dragtool\\addons\\dragplugin\\dragplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|solutionrelative:addons\\dragplugin\\dragplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|c:\\users\\tm\\documents\\godotplugin\\dragtool\\addons\\dragplugin\\editorinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6342FFF-9A84-4A86-BC0C-8DCEBA996AC2}|DragTool.csproj|solutionrelative:addons\\dragplugin\\editorinspector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\source\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,6 +59,7 @@
           "Children": [
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 1,
               "Title": "EditableSprite2D.cs",
               "DocumentMoniker": "D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\EditableSprite2D.cs",
@@ -101,6 +111,9 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+=======
+              "DocumentIndex": 3,
+>>>>>>> Stashed changes
               "Title": "Model.cs",
               "DocumentMoniker": "D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\source\\Model.cs",
               "RelativeDocumentMoniker": "addons\\dragplugin\\source\\Model.cs",
@@ -112,7 +125,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 7,
+=======
+              "DocumentIndex": 2,
+>>>>>>> Stashed changes
               "Title": "TorchSharpModel.cs",
               "DocumentMoniker": "D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\source\\TorchSharpModel.cs",
               "RelativeDocumentMoniker": "addons\\dragplugin\\source\\TorchSharpModel.cs",
@@ -121,6 +138,7 @@
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T13:52:49.831Z"
+<<<<<<< Updated upstream
             },
             {
               "$type": "Document",
@@ -145,10 +163,12 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T20:50:53.429Z"
+=======
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "ONNXModel.cs",
               "DocumentMoniker": "D:\\GodotPlugin\\dragtool\\addons\\dragplugin\\source\\ONNXModel.cs",
               "RelativeDocumentMoniker": "addons\\dragplugin\\source\\ONNXModel.cs",
@@ -157,6 +177,34 @@
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwCcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T13:31:27.514Z"
+<<<<<<< Updated upstream
+=======
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dragplugin.cs",
+              "DocumentMoniker": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\dragplugin.cs",
+              "RelativeDocumentMoniker": "addons\\dragplugin\\dragplugin.cs",
+              "ToolTip": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\dragplugin.cs",
+              "RelativeToolTip": "addons\\dragplugin\\dragplugin.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCoAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T20:18:49.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditorInspector.cs",
+              "DocumentMoniker": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\EditorInspector.cs",
+              "RelativeDocumentMoniker": "addons\\dragplugin\\EditorInspector.cs",
+              "ToolTip": "C:\\Users\\TM\\Documents\\GodotPlugin\\dragtool\\addons\\dragplugin\\EditorInspector.cs",
+              "RelativeToolTip": "addons\\dragplugin\\EditorInspector.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCgAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T19:58:28.419Z"
+>>>>>>> Stashed changes
             }
           ]
         }

@@ -1,0 +1,38 @@
+using Godot;
+
+public class MyScene : Node2D
+{
+    private ImageTexture texture;
+    private Image image;
+    private Color drawColor = new Color(1, 0, 0); // Цвет для рисования (красный в этом примере)
+
+    public override void _Ready()
+    {
+        // Создаем новую текстуру
+        texture = new ImageTexture();
+        // Устанавливаем размер текстуры (например, 256x256)
+        texture.CreateFromImage(new Image(256, 256, false, Image.Format.Rgb8));
+
+        // Получаем изображение из текстуры
+        image = (Image)texture.GetData();
+
+        // Начинаем рисование на изображении
+        image.Lock(); // Блокируем изображение перед рисованием
+        // Например, рисуем круг красного цвета в центре текстуры
+        image.DrawCircle(128, 128, 50, drawColor); // Координаты и радиус круга
+        image.Unlock(); // Разблокируем изображение после рисования
+
+        // Устанавливаем текстуру для объекта Sprite
+        var sprite = GetNode<Sprite>("Sprite"); // Замените "Sprite" на имя вашего объекта Sprite
+        sprite.Texture = texture;
+    }
+
+    public override void _Process(float delta)
+    {
+        // Обновляем изображение, если это необходимо (например, если нужно изменить цвет рисунка)
+        image.Lock();
+        image.Clear(drawColor); // Очистка изображения цветом drawColor
+        image.DrawCircle(128, 128, 50, drawColor);
+        image.Unlock();
+    }
+}

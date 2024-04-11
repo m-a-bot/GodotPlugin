@@ -9,6 +9,8 @@ public partial class EditableSprite2D : Sprite2D
     private float width;
     private float height;
 
+    private Texture2D Mask;
+
     [Export]
     public float Width
     {
@@ -44,12 +46,20 @@ public partial class EditableSprite2D : Sprite2D
 
     public override void _EnterTree()
     {
+<<<<<<< Updated upstream
 
      
+=======
+        base._EnterTree();
+>>>>>>> Stashed changes
     }
 
     public override void _ExitTree()
     {
+<<<<<<< Updated upstream
+=======
+        base._ExitTree();
+>>>>>>> Stashed changes
     }
 
     //public override void _Draw()
@@ -59,8 +69,10 @@ public partial class EditableSprite2D : Sprite2D
     //    var color = new Color(1, 0, 0);
     //    DrawCircle(center, radius, color);
 
-        
+
     //}
+
+    private Texture2D circleTexture = GD.Load<Texture2D>("res://addons/dragplugin/resources/circle.png");
 
     public override void _Input(InputEvent @event)
     {
@@ -76,18 +88,27 @@ public partial class EditableSprite2D : Sprite2D
 
             Vector2 new_position = new Vector2(localMousePos[0] / 2, localMousePos[1] / 2);
 
+<<<<<<< Updated upstream
             HandlePoint point = new HandlePoint(new_position);
             point.Visible = true;
+=======
+            //HandlePoint point = new HandlePoint(new_position);
+            //Sprite2D tSpr = new Sprite2D() { Texture = circleTexture , Position = localMousePos };
+            //tSpr.Scale = tSpr.Scale / 5;
+>>>>>>> Stashed changes
 
-            EditableSprite2D sprite = EditableSpriteHolder.EditableObject;
+            //EditableSprite2D sprite = EditableSpriteHolder.EditableObject;
 
-            sprite.AddChild(point, false, InternalMode.Back);
+            //sprite.AddChild(tSpr, false, InternalMode.Back);
 
 //#if TOOLS
 //            VisualServer.
 //#endif
 
             //sprite.AddChild(point);
+
+            
+
             GD.Print(localMousePos);
         }
     }

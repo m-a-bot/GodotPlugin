@@ -40,10 +40,16 @@ public partial class dragplugin : EditorPlugin
             if (sprite is null)
                 return;
 
-            GD.Print(sprite);
+            // GD.Print(sprite);
 
+<<<<<<< Updated upstream
             EditableSpriteHolder.AddPoint = true;
             //sprite._Input(@event);
+=======
+            EditableSpriteHolder.AddPoint = false;
+            EditableSpriteHolder.RemovePoint = true;
+            sprite._Input(@event);
+>>>>>>> Stashed changes
 
             //Vector2 mousePos = GetViewport().GetMousePosition();
             //Camera2D camera = GetViewport().GetCamera2D();
