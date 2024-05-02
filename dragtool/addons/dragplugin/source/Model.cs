@@ -9,11 +9,11 @@ internal class Model
             
     }
 
-    public static void ExecProcess(int seed)
+    public static void ExecProcess(int seed, string pathToPikcle)
     {
         // 1) Create Process Info
         var psi = new ProcessStartInfo();
-        psi.FileName = @"C:\Users\TM\AppData\Local\Programs\Python\Python39\python.exe";
+        psi.FileName = @"D:\conda_env\stylegan_biggan\python.exe";
 
 
         // 2) Provide script and arguments
