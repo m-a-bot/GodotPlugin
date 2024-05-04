@@ -16,7 +16,6 @@ public partial class dragplugin : EditorPlugin
 
         }
         _plugin = new EditorInspector();
-		_plugin.Perfect = false;
 
         AddInspectorPlugin(_plugin);
 

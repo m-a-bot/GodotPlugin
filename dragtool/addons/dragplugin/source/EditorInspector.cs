@@ -10,31 +10,54 @@ public partial class EditorInspector : EditorInspectorPlugin
 
     private List<string> name_networks = new()
     {
+        "gan_2d_game_scenes_64x64",
         "2d_game_scenes",
     };
 
     private LineEdit seedEdit;
+
+    private LineEdit pathToPython;
+
+    private OptionButton pickle_variants;
 
     public override bool _CanHandle(GodotObject @object)
     {
         return @object.GetType() == typeof(EditableSprite2D);
     }
 
+    EditableSprite2D sprite2D;
+
     public override void _ParseBegin(GodotObject @object)
     {
 
         //GD.Print(EditableObject.GetClass());
 
+        sprite2D = @object as EditableSprite2D;
+
         seedEdit = new LineEdit() { Text = $"{seed}" };
         seedEdit.TextChanged += SeedEdit_TextChanged;
 
+        pathToPython = new LineEdit() {};
+        pathToPython.Text = @"D:\conda_env\stylegan_biggan\python.exe";
+        pathToPython.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
+
+        Button choicePython = new Button() { Text = "Choice"};
+        choicePython.Pressed += ChoicePython_Pressed;
+
+
+        BoxContainer interpreter = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Begin, Vertical=true};
+        interpreter.AddChild(pathToPython);
+        interpreter.AddChild(choicePython);
+        interpreter.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
+
+        Label label = new Label() { Text = "Path to Python"};
 
         Label title = new Label() { Text = "2D scene generator" };
         BoxContainer __title = new BoxContainer() { Alignment = BoxContainer.AlignmentMode.Center };
         __title.AddChild(title);
 
         Label pickle_section = new Label() { Text = "Pickle" };
-        OptionButton pickle_variants = new OptionButton();
+        pickle_variants = new OptionButton();
         foreach (string name_net in name_networks)
         {
             pickle_variants.AddItem(name_net);
@@ -70,10 +93,16 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         mainContainer.AddChild(new HSeparator());
         mainContainer.AddChild(__title);
+        // ----------------------------
+        mainContainer.AddChild(new HSeparator());
+        mainContainer.AddChild(label);
+        mainContainer.AddChild(interpreter);
+
+        // ----------------------------
         mainContainer.AddChild(new HSeparator());
         mainContainer.AddChild(pickle_section);
         mainContainer.AddChild(boxContainer);
-
+        // -------------------------------
         mainContainer.AddChild(new HSeparator());
         mainContainer.AddChild(latent_section);
         mainContainer.AddChild(rowBoxSeed);
@@ -91,6 +120,19 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         AddCustomControl(mainContainer);
 
+    }
+
+    private void ChoicePython_Pressed()
+    {
+        //EditorFileDialog fileDialog = new EditorFileDialog();
+        //fileDialog.FileMode = EditorFileDialog.FileModeEnum.OpenFile;
+        //fileDialog.CurrentDir = "/";
+
+        //fileDialog.FileSelected += (string filePath) => {
+        //    GD.Print("User selected: " + filePath);
+        //};
+
+        //fileDialog.Popup()
     }
 
     private void Pickle_variants_ItemSelected(long index)
@@ -134,6 +176,12 @@ public partial class EditorInspector : EditorInspectorPlugin
 
         //sprite.Texture = GD.Load<Texture2D>("res://addons/dragplugin/resources/texture.png");
 
-        Model.ExecProcess(seed);
+        string pathToInterpreter = pathToPython.Text;
+
+        string pickle = pickle_variants.Text;
+
+        string seed = seedEdit.Text;
+
+        Model.ExecProcess(sprite2D, pathToInterpreter, pickle, seed);
     }
 }

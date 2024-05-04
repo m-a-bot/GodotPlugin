@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using Godot;
 
 internal class Model
@@ -9,19 +10,21 @@ internal class Model
             
     }
 
-    public static void ExecProcess(int seed, string pathToPikcle)
+    public static void ExecProcess(EditableSprite2D sprite2d, string pathToPython, string pathToPickle, string seed)
     {
+        string current_directory = Directory.GetCurrentDirectory();
+
+        //GD.Print(current_directory);
+
         // 1) Create Process Info
         var psi = new ProcessStartInfo();
-        psi.FileName = @"D:\conda_env\stylegan_biggan\python.exe";
+        psi.FileName = pathToPython;
 
 
         // 2) Provide script and arguments
-        var script = @"C:\Users\TM\Documents\GodotPlugin\dragtool\addons\dragplugin\source\run_python_from_c#.py";
+        var script = current_directory + @"\addons\dragplugin\source\" + pathToPickle +".py";
 
-        var test = $"Hello, Python - {seed}";
-
-        psi.Arguments = $"\"{script}\" \"{test}\"";
+        psi.Arguments = $"\"{script}\" \"{current_directory + @"\addons\dragplugin\resources\"} {seed}\"";
 
         // 3) Process configuration
         psi.UseShellExecute = false;
@@ -38,7 +41,22 @@ internal class Model
             results = process.StandardOutput.ReadToEnd();
         }
 
-        GD.Print(results);
+        if (errors.Length > 0)
+            return;
+
+        try
+        {
+            // "res://addons/dragplugin/resources/" + 
+            //ResourceLoader.Load<CompressedTexture2D>(@"res://addons/dragplugin/resources/" + results)
+            
+            // sprite2d.Texture = GD.Load<CompressedTexture2D>(results);
+            // GD.Load<CompressedTexture2D>(@"res://addons/dragplugin/resources/" + results);
+        }
+        catch {
+
+        }
+        //GD.Print(results);
+        //GD.Print(errors);
     }   
 
 }
