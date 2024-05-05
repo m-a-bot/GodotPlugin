@@ -48,8 +48,8 @@ internal class Model
         {
             // "res://addons/dragplugin/resources/" + 
             //ResourceLoader.Load<CompressedTexture2D>(@"res://addons/dragplugin/resources/" + results)
-            
-            // sprite2d.Texture = GD.Load<CompressedTexture2D>(results);
+
+            sprite2d.Texture = GD.Load<CompressedTexture2D>(@"res://addons/dragplugin/resources/" + results);
             // GD.Load<CompressedTexture2D>(@"res://addons/dragplugin/resources/" + results);
         }
         catch {

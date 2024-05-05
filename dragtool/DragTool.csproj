@@ -12,5 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="addons\dragplugin\resources\" />
+    <Folder Include="res://addons/dragplugin/resources/" />
   </ItemGroup>
 </Project>

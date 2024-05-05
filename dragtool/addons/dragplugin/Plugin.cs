@@ -3,7 +3,7 @@ using Godot;
 using System;
 
 [Tool]
-public partial class dragplugin : EditorPlugin
+public partial class Plugin : EditorPlugin
 {
 	private EditorInspector _plugin;
 

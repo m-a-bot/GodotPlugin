@@ -8,6 +8,8 @@ public partial class EditorInspector : EditorInspectorPlugin
 {
     private int seed = 1000;
 
+    private string _pathToPython = "";
+
     private List<string> name_networks = new()
     {
         "gan_2d_game_scenes_64x64",

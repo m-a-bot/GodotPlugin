@@ -91,5 +91,5 @@ if __name__ == "__main__":
 
     save_image(z, path_project + "/test.png")
 
-    # print(path_project + "test.png")
+    print("test.png")
 
